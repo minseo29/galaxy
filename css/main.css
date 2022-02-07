@@ -1,118 +1,440 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
 
 :root {
-    --primary: #111;
-    --secondre: #666;
-    --accent: #eb5757;
-    --bgcolor: #f5f5f5;
-}
-
-body {
-    font-family: 'Nanum Gothic', sans-serif;
-    color: var(--secondre);
+  --primary: #111;
+  --secondry: #666;
+  --accent: #eb5757;
+  --bgColor: #f5f5f5;
 }
 
 a {
-    color: inherit;
-    text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 
+button {
+  background-color: var(--primary);
+  color: #fff;
+  padding: 14px 40px;
+  border-radius: 50px;
+  border: 1px solid var(--primary);
+  cursor: pointer;
+}
+
+button.light {
+  background-color: var(--bgColor);
+  color: var(--primary);
+  border: 1px solid var(--bgColor);
+}
+
+button.line {
+  background-color: transparent;
+  color: var(--primary);
+  padding: 10px 26px;
+  border-radius: 36px;
+  border: 1px solid var(--primary);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+button.line:hover {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+body {
+  font-family: "Nanum Gothic", sans-serif;
+  color: var(--primary);
+}
 
 .inner {
-    width: 1160px;
-    /* background-color: #ddd; */
-    margin: 0 auto;
+  width: 1160px;
+  margin: 0 auto;
 }
 
 .active {
-    color: var(--accent);
+  color: var(--accent);
 }
 
 /* header */
 header .inner {
-    display: flex;
-    align-items: center;
-    height: 80px;
+  display: flex;
+  align-items: center;
+  height: 80px;
+}
+
+header .inner h1 {
+  margin-right: auto;
+  font-size: 40px;
 }
 
 header .inner ul {
-    display: flex;
-    gap: 60px;
-    font-size: 14px;
+  display: flex;
+  gap: 52px;
 }
 
 header .inner ul li a {
-    font-size: 14px;
-    font-weight: 600;
-    /* background-color: red; */
-    height: 80px;
-    display: block;
-    line-height: 80px;
-    position: relative;
+  font-size: 14px;
+  height: 80px;
+  display: block;
+  line-height: 80px;
+  position: relative;
+  padding: 0 4px;
 }
 
 header .inner ul li a:hover {
-    color: var(--accent);
+  color: var(--accent);
 }
 
-
-
-
-/* 메뉴 애니메이션 */
-header .inner ul li a::before{
-    color: var(--accent);
-    content: "";
-    height: 3px;
-    width: 0%;
-    background-color: var(--accent);
-    position: absolute;
-    bottom: 0;
-    transition: width 0.3s;
+header .inner ul li a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background-color: var(--accent);
+  transition: width 0.3s;
 }
 
-header .inner ul li a:hover::before{
-    width: 100%;
-}
-/* 끝 */
-
-
-header .inner ul li a.active::before{
-    color: var(--accent);
-    content: "";
-    height: 3px;
-    width: 100%;
-    background-color: var(--accent);
-    position: absolute;
-    bottom: 0;
+header .inner ul li a:hover::before {
+  width: 100%;
 }
 
-
-
-header .inner h1 {
-    margin-right: auto;
-    font-weight: 700;
-    font-size: 40px;
+header .inner ul li a.active::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 3px;
+  width: 100%;
+  background-color: var(--accent);
 }
 
 header .inner i {
-    margin-left: 60px;
-    font-size: 20px;
+  margin-left: 60px;
+  font-size: 24px;
 }
 
-/* silde */
+.cart {
+  position: relative;
+}
+.cart .count {
+  position: absolute;
+  top: -5px;
+  right: -6px;
+  width: 16px;
+  height: 16px;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  background-color: red;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 16px;
+}
+
+/* slide */
 .slide {
-    height: 500px;
-    background-color: var(--bgcolor);
+  height: 500px;
+  background-color: var(--bgColor);
+}
+
+.slide .inner {
+  height: 500px;
+  background: url("../images/slide_bg.jpg") no-repeat;
+  background-position: right center;
+}
+
+.slide__text {
+  padding-top: 120px;
+  padding-left: 24px;
+}
+
+.slide__text h2 {
+  font-size: 60px;
+  font-weight: 700;
+}
+
+.slide__text h2 b {
+  font-size: 70px;
+  font-weight: 800;
+}
+
+.slide__text .btns {
+  margin-top: 40px;
+}
+
+.slide__text .btns span {
+  padding: 12px 0;
+  position: relative;
+}
+
+.slide__text .btns span::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--primary);
+}
+
+.slide__text .btns {
+  margin-left: 24px;
+}
+
+.slide__text .btns .btn {
+  margin-left: 43px;
+}
+
+/* product_01 */
+.product_01 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 100px 0;
+}
+
+.product_01 .box {
+  width: 560px;
+  height: 320px;
+  background-color: var(--bgColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product_01 .box .photo {
+  width: 160px;
+  height: 160px;
+  margin-right: 40px;
+}
+
+.product_01 .box .info {
+}
+
+.product_01 .box .info h3 {
+  font-size: 30px;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.product_01 .box .info p {
+  margin-bottom: 36px;
+  color: var(--secondry);
+}
+
+/* product_02 */
+.product_02 {
+  padding: 20px 0 100px;
+}
+
+.product_02 h3 {
+  font-size: 36px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.product_02 p {
+  text-align: center;
+  margin-bottom: 66px;
+  color: var(--secondry);
+}
+
+.product_02 .box_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product_02 .box_wrapper .box {
+  width: 260px;
+  height: 260px;
+  background-color: var(--bgColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product_02 .box_wrapper .box img {
+  width: 160px;
+}
+
+/* banner */
+.banner {
+  height: 600px;
+  background: url("../images/banner.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 100px;
+}
+
+.banner .info {
+  color: #fff;
+  padding-top: 168px;
+}
+
+.banner .info h3 {
+  font-size: 64px;
+  font-weight: 700;
+}
+
+.banner .info p {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 42px 0 52px;
+}
+
+/* product_03 */
+.product_03 {
+  padding: 20px 0 100px;
+}
+
+.product_03 h3 {
+  font-size: 36px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.product_03 p {
+  text-align: center;
+  margin-bottom: 66px;
+  color: var(--secondry);
+}
+
+.product_03 .box_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.product_03 .box_wrapper .box {
+  width: 260px;
+  height: 260px;
+  background-color: var(--bgColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product_03 .box_wrapper .box img {
+  width: 160px;
+}
+
+/* blog */
+.blog {
+  padding: 20px 0 100px;
+}
+
+.blog h3 {
+  font-size: 36px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.blog p {
+  text-align: center;
+  margin-bottom: 66px;
+  color: var(--secondry);
+}
+
+.blog .box_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.blog .box_wrapper .box {
+  width: 360px;
+  height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 32px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.blog .box_wrapper .box img {
+  transition: all 0.3s;
+}
+
+.blog .box_wrapper .box:hover img {
+  transform: scale(1.2);
+}
+
+/* footer */
+footer {
+  background-color: #222;
+  color: #fff;
+  padding: 100px 0;
+}
+
+.footer {
+  display: flex;
+}
+
+.store {
+  display: flex;
+}
+
+.copyright {
+  margin-top: 60px;
+  font-size: 12px;
+  color: var(--bgColor);
+}
+
+.footer__info {
+  margin-right: 200px;
+}
+
+.footer__info h2 {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.footer__info p {
+  margin: 40px 0 18px;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.footer__info .store {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.footer__info .store div {
+  width: 130px;
+  height: 40px;
+}
+
+.footer__info .social {
+  display: flex;
+  gap: 20px;
+}
+
+.footer__info .social i {
+  font-size: 30px;
 }
