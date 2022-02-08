@@ -438,3 +438,39 @@ footer {
 .footer__info .social i {
   font-size: 30px;
 }
+
+/* .footer menu */
+.footer__menu {
+  display: flex;
+}
+
+.footer__menu a:hover {
+  text-decoration: underline;
+}
+
+.footer__menu > li {
+  width: 200px;
+}
+
+.footer__menu li {
+  width: 200px;
+}
+
+/* 개별 a태그만 하고싶을때 > 사용 */
+.footer__menu > li > a {
+  font-size: 20px;
+  font-weight: 700;
+  padding: 20px 20px 20px 0;
+  /* inline, block 두가지 속성을 가지고싶을때 */
+  display: inline-block
+}
+
+.footer__menu ul {
+  margin-top: 26px;
+}
+
+.footer__menu ul li a {
+  /* width: 180px; */
+  display: inline-block;
+  padding: 16px 0;
+}
